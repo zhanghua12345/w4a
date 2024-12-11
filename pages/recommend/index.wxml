@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view >
+  <van-sticky>
+    <van-tabs active="{{ active }}" bind:change="onChange" line-width="60rpx" line-height="8rpx" color="#F9637B" title-active-color="#F9637B"	title-inactive-color="#999">
+      <van-tab title="最热短剧"></van-tab>
+      <van-tab title="最新短剧"></van-tab>
+    </van-tabs>
+    </van-sticky>
+
+  <van-button type="info">111</van-button>
+  <view class="" style="height: 500rpx;width: 100%;">1</view>
+  <view class="" style="height: 500rpx;width: 100%;">2</view>
+  <view class="" style="height: 500rpx;width: 100%;">3</view>
+  <view class="" style="height: 500rpx;width: 100%;">4</view>
+  <view class="" style="height: 500rpx;width: 100%;">4</view>
+  <view class="" style="height: 500rpx;width: 100%;">4</view>
+</view>

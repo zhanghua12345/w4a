@@ -1,0 +1,50 @@
+/* components/recentlyPlayed/index.wxss */
+@import "../../static/iconfont.wxss";
+.recently{
+  position: fixed;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 30rpx;
+  height: 120rpx;
+  z-index: 9999;
+}
+.recently-bg{
+width: 100%;
+height: 100%;
+}
+.main{
+  position: absolute;
+  top: 0;
+  padding: 0 30rpx;
+  width: calc(100% - 60rpx);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999999;
+  color: #fff;
+}
+.info-bg{
+  padding-left: 16rpx;
+  width: 72rpx;
+  height: 96rpx;
+  border-radius: 8rpx;
+}
+.info{
+  padding-left: 30rpx;
+flex: 1;
+}
+.info-title{
+width: 380rpx;
+font-size: 24rpx;
+font-weight: 600;
+
+}
+.info-subtitle{
+  width: 380rpx;
+}
+.text-ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

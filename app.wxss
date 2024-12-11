@@ -1,0 +1,29 @@
+/**app.wxss**/
+@import "./static/iconfont.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #373451;
+  line-height: 1.5;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.text-ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

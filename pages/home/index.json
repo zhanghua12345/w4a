@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navbar":"../../components/navbar",
+    "loadmore":"../../components/loadmore",
+    "recentlyPlayed":"../../components/recentlyPlayed"
+  },
+  "navigationStyle":"custom"
+}

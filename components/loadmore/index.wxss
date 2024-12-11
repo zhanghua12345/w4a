@@ -1,0 +1,22 @@
+@import "../../static/iconfont.wxss";
+
+.load {
+  color: #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+margin-bottom: 36rpx;
+}
+.icon{
+  width: 20rpx;
+  height: 20rpx;
+  padding-right: 10rpx;
+}
+.load-span {
+  padding: 0 20rpx;
+  color: #888;
+}
+.iconfont{
+  font-size: 24rpx;
+  color: #aaa;
+}

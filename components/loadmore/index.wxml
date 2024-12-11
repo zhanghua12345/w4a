@@ -1,0 +1,13 @@
+<!--components/loadmore/index.wxml-->
+<view>
+  <view class="load">
+    ———
+
+    <span class="load-span">
+      <image src="/static/images/loading.gif" class="icon" mode="heightFix" wx:if="{{status==='loading'}}" />
+      <i class="iconfont {{status==='loadmore'?'icon-daiweijiantou-shang':'icon-kulian'}}" wx:else />
+      {{status==='loading'?loadingText:status==='loadmore'?loadmoreText:nomoreText}}
+    </span>
+    ———
+  </view>
+</view>
