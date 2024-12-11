@@ -1,0 +1,26 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  "stylelint.snippet": ["css", "less", "postcss", "scss", "vue"],
+  "stylelint.validate": ["css", "less", "postcss", "vue", "scss"],
+  //保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // 关闭编辑器内置样式检查（避免与stylelint冲突）
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  // "stylelint.customSyntax": "postcss-scss", //postcss-scss只能自动修复.scss或.css后缀的文件
+  // "stylelint.customSyntax": "postcss-html", //postcss-html只能自动修复.vue或者html文件
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "stylelint.configFile": ".stylelintrc.js",
+  "stylelint.config": null
+}

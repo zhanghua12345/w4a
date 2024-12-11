@@ -1,6 +1,8 @@
 /**app.wxss**/
 @import "./static/iconfont.wxss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .container {
   height: 100%;
   display: flex;
@@ -11,9 +13,14 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-} 
+}
 
-
+page {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #373451;
+  line-height: 1.5;
+}
 .ellipsis {
   overflow: hidden;
   display: -webkit-box;
@@ -22,7 +29,7 @@
   text-overflow: ellipsis;
   white-space: normal;
 }
-.text-ellipsis{
+.text-ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

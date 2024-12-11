@@ -17,6 +17,10 @@
       {
         "packageJsonPath": "./package.json",
         "miniprogramNpmDistDir": "./"
+      },
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./dist"
       }
     ],
     "babelSetting": {
@@ -30,5 +34,7 @@
     "tabIndent": "auto",
     "tabSize": 2
   },
-  "appid": "wx4bd2f276faecec4d"
+  "appid": "wx4bd2f276faecec4d",
+  "miniprogramRoot": "dist/",
+  "srcMiniprogramRoot": "dist/"
 }

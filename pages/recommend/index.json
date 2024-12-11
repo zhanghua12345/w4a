@@ -1,10 +1,11 @@
 {
   "usingComponents": {
-    "loadmore":"../../components/loadmore",
-    "recentlyPlayed":"../../components/recentlyPlayed",
+    "loadmore": "../../components/loadmore",
+    "recentlyPlayed": "../../components/recentlyPlayed",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "van-sticky": "@vant/weapp/sticky/index"
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-divider": "@vant/weapp/divider/index"
   },
   "navigationBarTitleText": "排行榜"
 }
