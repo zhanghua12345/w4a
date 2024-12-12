@@ -11,8 +11,8 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "古言网络",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",
@@ -33,7 +33,7 @@
         "selectedIconPath": "/static/tabbar/Recommend_active.png"
       },
       {
-        "text": "福利",
+        "text": "追剧",
         "pagePath": "pages/discover/index",
         "iconPath": "/static/tabbar/reward.png",
         "selectedIconPath": "/static/tabbar/reward_active.png"

@@ -1,9 +1,11 @@
-<!--components/recentlyPlayed/index.wxml-->
+<!-- components/recentlyPlayed/index.wxml -->
 <view class="recently">
   <image class="recently-bg" src="/static/images/recently-bg.png" mode="" />
   <view class="main">
     <i class="iconfont icon-guanbianniu" style="font-size: 40rpx;" />
-    <image class="info-bg" src="/static/images/recently-bg.png" mode="" />
+    <view style="margin-left: 16rpx;">
+      <image class="info-bg" src="/static/images/recently-bg.png" mode="" />
+    </view>
     <view class="info">
       <view class="info-title text-ellipsis">Romantic Flash Marriage In ProgressProgress</view>
       <view class="info-subtitle text-ellipsis">Last Watch：Ep.5</view>

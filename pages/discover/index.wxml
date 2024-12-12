@@ -1,27 +1,25 @@
-<!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+<!-- index.wxml -->
+<view class="">
+  <view class="grid grid-rows-2 grid-cols-3 gap-20 p-main">
+    <view class="" wx:for="{{5}}">
+      <view class="relative rounded-main overflow-hidden h-290">
+        <view class="absolute left-0 top-0 h-full w-full bg-000-6 z-[1] flex items-center justify-center">
+          <i class="iconfont icon-shanchu text-fff text-64" />
         </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
+        <image src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" mode="scaleToFill" class="w-full h-full rounded-16" />
+      </view>
+      <view class="w-full">
+        <view class="text-24 line-clamp-2	pt-16 font-600">
+          Rich Lady‘s Escape MarEscape Marriage
+        </view>
+        <view class="text-24 font-600	py-10">
+          EP.1
+          <span class="font-400">/EP.51</span>
+        </view>
+      </view>
     </view>
   </view>
-</scroll-view>
+</view>
+<view class="fixed bottom-40 right-40 w-90 h-90 bg-main rounded-full flex justify-center items-center text-fff">
+  <i class="iconfont icon-bianji1 text-36" />
+</view>

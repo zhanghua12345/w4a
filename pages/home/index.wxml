@@ -3,8 +3,8 @@
     <navbar navbarData="{{navbarData}}" Color="#000" />
   </view>
   <view class="header">
-    <view class="header-search"  style="width:{{capsuleObj.left-14-18}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
-      <i class="iconfont icon-search"  style="font-size: 24rpx;"/>
+    <view class="header-search" style="width:{{capsuleObj.left-14-18}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
+      <i class="iconfont icon-search" style="font-size: 24rpx;" />
       <view class=" header-search-button ">寻找你喜欢的短剧</view>
     </view>
     <swiper indicator-dots autoplay class="swiper" indicator-active-color="#FB5196" circular>
@@ -21,7 +21,7 @@
   <!-- 精品短剧 -->
   <view class="best">
     <view class="model_title">
-      <i class="iconfont icon-dianzan model_image"  style="color: #FF7D20;" />
+      <i class="iconfont icon-dianzan model_image" style="color: #FF7D20;" />
       精品推荐
     </view>
     <scroll-view type="list" scroll-x class="contain">
@@ -36,7 +36,8 @@
   <!-- 猜你喜欢 -->
   <view class="stars">
     <view class="model_title">
-      <i class="iconfont icon-shoucang model_image"  style="color: #FFCC00;" />猜你喜欢
+      <i class="iconfont icon-shoucang model_image" style="color: #FFCC00;" />
+      猜你喜欢
     </view>
     <view class="stars-main">
       <block wx:for="{{8}}" wx:key="*this">
@@ -50,26 +51,34 @@
   <!-- 全网热播 -->
   <view class="praise">
     <view class="model_title">
-      <i class="iconfont icon-dianzan model_image"  style="color: #FB1D00" />全网热播
+      <i class="iconfont icon-dianzan model_image" style="color: #FB1D00" />
+      全网热播
     </view>
     <view class="praise-main">
       <block wx:for="{{8}}" wx:key="*this">
         <view class="praise-box">
           <image src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" mode="scaleToFill" class="praise-main-image" />
           <view class="praise-info">
-            <view class="praise-info-title ellipsis">Mrs.Gu,You Dien cumbag treated her as a stunt double and neglected her for five years. Unexpectedly, his wife was the white Exposed</view>
-            <view class="praise-info-tips ">
-              <view class="praise-info-tip praise-info-hot">
-                <i class="iconfont icon-fire"  style="font-size:20rpx" />1654
-              </view>
-              <view class="praise-info-tip praise-info-type">CEO</view>
+            <view class="praise-info-title ellipsis">
+              Mrs.Gu,You Dien cumbag treated her as a stunt double and neglected her for five years. Unexpectedly, his wife was the white Exposed
             </view>
-            <view class="praise-info-subtitle ellipsis">The scumbag treated her as a stunt double and neglected her for five years. Unexpectedly, his wife was the white moonlight he had been searching.</view>
+            <view class="flex mt-12">
+              <view class="py-8 px-16 flex flex-wrap items-center mr-16 rounded-full text-20 leading-1 text-600 text-[#ff3859] bg-[#FDC9C9]">
+                <i class="iconfont icon-fire text-20" />
+                1654
+              </view>
+              <view class="py-8 px-16   rounded-full text-20 leading-1 text-600 text-[#FDC9C9] bg-[#000000]">
+                CEO
+              </view>
+            </view>
+            <view class="praise-info-subtitle ellipsis">
+              The scumbag treated her as a stunt double and neglected her for five years. Unexpectedly, his wife was the white moonlight he had been searching.
+            </view>
           </view>
         </view>
       </block>
     </view>
   </view>
-  <loadmore  status="loading" loading-text="加载中" />
+  <loadmore status="loading" loading-text="加载中" />
   <recentlyPlayed />
 </view>
