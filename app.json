@@ -6,13 +6,16 @@
     "pages/discover/index",
     "pages/my/index",
     "pages/index/index",
+    "pages/search/index",
+    "pages/history/index",
+    "pages/collections/index",
     "pages/logs/logs"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "古言网络",
     "navigationBarBackgroundColor": "#fff",
-    "backgroundColor": "#fff"
+    "backgroundColor": "#f30"
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",

@@ -4,19 +4,19 @@
   height: 1136rpx;
   position: relative;
 }
-.header-search{
+.header-search {
   position: absolute;
-  z-index: 999;
+  z-index: 99999999;
   left: 7px;
   width: 480rpx;
-  background:rgba(234, 234, 234, 0.75);
+  background: rgba(234, 234, 234, 0.75);
   border-radius: 50rpx;
   display: flex;
   align-items: center;
   padding-left: 18px;
-  color: #fff;          
+  color: #fff;
 }
-.header-search-button {   
+.header-search-button {
   padding-left: 20rpx;
 }
 .navbar {
@@ -60,7 +60,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 40%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    #fff 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .header-button {
@@ -68,13 +74,13 @@
   padding: 0 60rpx;
   height: 96rpx;
   line-height: 96rpx;
-  background: linear-gradient(90deg, #F76D67 0%, #FB5196 100%);
+  background: linear-gradient(90deg, #f76d67 0%, #fb5196 100%);
   border-radius: 200rpx;
   color: #fff;
 }
 
 .header-button:active {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .best {
@@ -96,7 +102,6 @@
   padding-right: 12rpx;
   font-size: 40rpx;
 }
-
 
 .contain {
   width: 750rpx;
@@ -164,7 +169,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: #F5F5F5;
+  background: #f5f5f5;
   border-radius: 16rpx;
   overflow: hidden;
   height: 290rpx;
@@ -202,20 +207,20 @@
   margin-right: 16rpx;
   border-radius: 100rpx;
   font-size: 20rpx;
-  color: #FF3859;
+  color: #ff3859;
   line-height: 20rpx;
   font-weight: 600;
   height: 20rpx;
 }
 
 .praise-info-hot {
-  background: #FDC9C9;
-  color: #FF3859;
+  background: #fdc9c9;
+  color: #ff3859;
 }
 
 .praise-info-type {
   background: #000000;
-  color: #FDC9C9;
+  color: #fdc9c9;
 }
 
 .hot_image {

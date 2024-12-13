@@ -45,4 +45,10 @@ Page({
       opacity: opacity,
     });
   },
+  openSearch() {
+    console.log(454);
+    wx.navigateTo({
+      url: "../search/index",
+    });
+  },
 });

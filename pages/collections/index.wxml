@@ -1,0 +1,37 @@
+<!-- index.wxml -->
+<view class="flex flex-col items-center">
+  <image class="fixed left-0 top-0 w-full z-1b" src="/static/images/recommend-bg.png" mode="widthFix" />
+  <view class="border-0 sticky w-full top-[-1rpx] z-50">
+    <van-tabs active="{{ active }}" bind:change="onChange" line-width="60rpx" line-height="8rpx" color="#F9637B" style="--tabs-nav-background-color:{{showNav?'#fff':'transparent'}}" title-active-color="#F9637B" title-inactive-color="#999">
+      <van-tab title="最热短剧" name="a"></van-tab>
+      <van-tab title="最新短剧" name="b"></van-tab>
+    </van-tabs>
+  </view>
+  <view class="pb-48">
+    <view class="flex flex-wrap items-center mt-48 px-main h-186 " wx:for="{{8}}" wx:key="*this">
+      <view class="w-48 h-48  relative z-2">
+        <i class="iconfont icon-ranking leading-1 text-48 text-[#FFBB27]" />
+        <view class="absolute top-0 left-0 text-fff w-full h-full flex flex-wrap justify-center">
+          1
+        </view>
+      </view>
+      <image src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" class="w-140 h-full rounded-16 ml-36 mr-32" />
+      <view class="flex-1 h-full w-full">
+        <view class="font-600 line-clamp-1">Romantic Flash Marriage In Progress</view>
+        <view class="flex mt-12">
+          <view class="py-8 px-16 flex flex-wrap items-center mr-16 rounded-full text-20 leading-1 text-600 text-[#ff3859] bg-[#FDC9C9]">
+            <i class="iconfont icon-fire text-20" />
+            1654
+          </view>
+          <view class="py-8 px-16   rounded-full text-20 leading-1 text-600 text-[#FDC9C9] bg-[#000000]">
+            CEO
+          </view>
+        </view>
+        <view class="text-20 text-666 mt-36 line-clamp-2">
+          The scumbag treated her as a stunt double and neas a stunt double and neglected her for five years. Unexpectedly, his wife was the white moonlight he had been searching.
+        </view>
+      </view>
+    </view>
+  </view>
+  <loadmore status="loading" loading-text="加载中" />
+</view>

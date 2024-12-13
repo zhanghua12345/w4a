@@ -3,7 +3,7 @@
     <navbar navbarData="{{navbarData}}" Color="#000" />
   </view>
   <view class="header">
-    <view class="header-search" style="width:{{capsuleObj.left-14-18}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;">
+    <view class="header-search" style="width:{{capsuleObj.left-14-18}}px; height:{{capsuleObj.height}}px; top:{{capsuleObj.top}}px;" bindtap="openSearch">
       <i class="iconfont icon-search" style="font-size: 24rpx;" />
       <view class=" header-search-button ">寻找你喜欢的短剧</view>
     </view>
