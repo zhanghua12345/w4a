@@ -8,6 +8,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/discover/index",
+          "pathName": "pages/discover/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/history/index",
+          "pathName": "pages/history/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/my/index",
           "pathName": "pages/my/index",
           "query": "",

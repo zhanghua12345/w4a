@@ -5,6 +5,7 @@ Page({
   onLoad() {
     this.setData({
       active: "a",
+      list: [],
     });
   },
 

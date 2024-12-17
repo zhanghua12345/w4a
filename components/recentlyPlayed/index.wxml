@@ -1,14 +1,15 @@
 <!-- components/recentlyPlayed/index.wxml -->
-<view class="recently">
+<view class="" style="width:100%;height:140rpx" hidden="{{!show}}"></view>
+<view class="recently" hidden="{{!show}}">
   <image class="recently-bg" src="/static/images/recently-bg.png" mode="" />
   <view class="main">
-    <i class="iconfont icon-guanbianniu" style="font-size: 40rpx;" />
+    <i class="iconfont icon-guanbianniu" style="font-size: 40rpx;" bind:tap="onClose" />
     <view style="margin-left: 16rpx;">
-      <image class="info-bg" src="/static/images/recently-bg.png" mode="" />
+      <image class="info-bg" src="{{data.cover}}" mode="" />
     </view>
     <view class="info">
-      <view class="info-title text-ellipsis">Romantic Flash Marriage In ProgressProgress</view>
-      <view class="info-subtitle text-ellipsis">Last Watch：Ep.5</view>
+      <view class="info-title text-ellipsis">{{data.name}}</view>
+      <view class="info-subtitle text-ellipsis">上次观看到第 {{ data.order || 0}} 集</view>
     </view>
     <i class="iconfont icon-play" style="font-size: 68rpx;" />
   </view>

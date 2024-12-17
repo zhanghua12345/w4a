@@ -1,0 +1,108 @@
+@import "../../static/iconfont.wxss";
+
+.popup-box {
+  padding: 60rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+}
+.popup-nav {
+  font-size: 36rpx;
+  color: #000;
+  font-weight: 700;
+  width: 100%;
+}
+.popup-nav-sub {
+  font-size: 26rpx;
+  color: #aaa;
+  padding-top: 10rpx;
+  width: 100%;
+}
+.avatar {
+  position: relative;
+  margin-top: 60rpx;
+  border-radius: 100rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+.avatar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 2.5rem 0 rgba(0, 0, 0, 0.15);
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f7f8;
+  border-radius: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 !important;
+  overflow: hidden;
+}
+.button::after {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 0rpx solid rgba(0, 0, 0, 0) !important;
+}
+.icon-bg {
+  font-size: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: #e4e9ec;
+  height: 100%;
+}
+.cam {
+  position: absolute;
+  bottom: 12rpx;
+  right: -10rpx;
+  width: 64rpx;
+  height: 64rpx;
+  border: 4rpx solid #fff;
+  border-radius: 100rpx;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-cam {
+  font-size: 40rpx;
+  line-height: 1;
+  color: #fff;
+}
+.input {
+  margin: 50rpx 0 0;
+  padding: 0 20rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  line-height: 80rpx;
+  background: #f8f7f8;
+  font-size: 32rpx;
+  width: 650rpx;
+}
+.buttons {
+  margin-top: 70rpx;
+  width: 100%;
+}
+/* px-main py-60 flex flex-col items-center leading-1.3 
+mt-50 px-20 h-80 rounded-12 leading-[80rpx] bg-[#f8f7f8] text-32 w-full
+text-40 leading-1 text-fff
+ absolute bottom-[-12rpx] right-[-10rpx] h-64 w-64 border-4 border-fff border-solid rounded-full bg-000 flex justify-center items-center
+ text-36 text-000 font-700 w-full
+ text-100 leading-1 text-[#e4e9ec] text-100 leading-1 text-[#e4e9ec]
+w-full h-full bg-f8f7f8 rounded-full flex justify-center items-center px-0
+relative mt-60 rounded-full w-180 h-180
+
+ 
+*/

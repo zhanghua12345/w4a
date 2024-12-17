@@ -1,17 +1,15 @@
 <!-- index.wxml -->
 <view class="">
-  <view class="grid grid-rows-2 grid-cols-3 gap-20 p-main">
-    <view class="" wx:for="{{5}}">
+  <view class="grid grid-cols-3 gap-20 p-main">
+    <view class="" wx:for="{{list}}">
       <view class="relative rounded-main overflow-hidden h-290">
-        <view class="absolute left-0 top-0 h-full w-full bg-000-6 z-[1] flex items-center justify-center">
+        <view class="absolute left-0 top-0 h-full w-full bg-000-6 z-[1] flex items-center justify-center" hidden="{{!isEdit}}" bind:tap="delete" data-item='{{item}}'>
           <i class="iconfont icon-shanchu text-fff text-64" />
         </view>
-        <image src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" mode="scaleToFill" class="w-full h-full rounded-16" />
+        <image src="{{item.cover}}" mode="scaleToFill" class="w-full h-full rounded-16" />
       </view>
       <view class="w-full">
-        <view class="text-24 line-clamp-2	pt-16 font-600">
-          Rich Lady‘s Escape MarEscape Marriage
-        </view>
+        <view class="text-24 line-clamp-2	pt-16 font-600">{{item.name}}</view>
         <view class="text-24 font-600	py-10">
           EP.1
           <span class="font-400">/EP.51</span>
@@ -20,6 +18,9 @@
     </view>
   </view>
 </view>
-<view class="fixed bottom-40 right-40 w-90 h-90 bg-main rounded-full flex justify-center items-center text-fff">
-  <i class="iconfont icon-bianji1 text-36" />
+<view class="flex flex-col items-center">
+  <loadmore status="{{loadStatus}}" />
+</view>
+<view class="fixed bottom-40 right-40 w-90 h-90 bg-main rounded-full flex justify-center items-center text-fff" bind:tap="editChage">
+  <i class="iconfont {{isEdit?'icon-gouxuan':'icon-bianji1'}} text-36" />
 </view>

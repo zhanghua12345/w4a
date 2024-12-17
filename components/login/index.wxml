@@ -1,0 +1,22 @@
+<!-- components/loadmore/index.wxml -->
+<view>
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom" round>
+    <view class="popup-box">
+      <view class="popup-nav">获取您的昵称、头像</view>
+      <view class="popup-nav-sub ">获取用户头像、昵称，主要用于向用户提供具有辨识度的用户体验</view>
+      <view class="avatar">
+        <button class="button " open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
+          <image class="icon-bg" mode="scaleToFill" src="{{newUserInfo.avatarUrl || '/static/nav.png'}}" wx:if="{{newUserInfo.avatarUrl}}" />
+          <i class="iconfont icon-clover icon-bg" wx:else />
+        </button>
+        <view class="cam">
+          <i class="iconfont icon-xiangji icon-cam" />
+        </view>
+      </view>
+      <input type="nickname" value="{{newUserInfo.nickname}}" class="input" placeholder="请输入昵称" />
+      <view class="buttons">
+        <van-button type="primary" color="{{newUserInfo.avatarUrl&&newUserInfo.nickname?'#07C160':'#aaa'}}" style="width:100%" block bind:click="submit">授权</van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>

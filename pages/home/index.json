@@ -1,8 +1,10 @@
 {
   "usingComponents": {
-    "navbar":"../../components/navbar",
-    "loadmore":"../../components/loadmore",
-    "recentlyPlayed":"../../components/recentlyPlayed"
+    "navbar": "../../components/navbar",
+    "loadmore": "../../components/loadmore",
+    "recentlyPlayed": "../../components/recentlyPlayed"
   },
-  "navigationStyle":"custom"
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

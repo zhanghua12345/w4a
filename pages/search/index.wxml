@@ -1,6 +1,27 @@
 <!-- index.wxml -->
 <view class="flex flex-col items-center">
-  <view class="flex sticky top-0 left-0 w-full h-100">
+  <view class="flex sticky top-[-1rpx] left-0 w-full h-100">
     <van-search class="w-full" custom-class="p-0" value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  </view>
+  <view class="px-main w-full pb-main" wx:if="{{list.length===0}}">
+    <view class=" pt-main flex flex-wrap justify-between items-center sticky top-[99rpx] bg-fff">
+      <view class="font-600">Historical search</view>
+      <i class="iconfont icon-shanchu text-40" />
+    </view>
+    <view class="flex flex-wrap pt-12">
+      <view class="h-48 border-2 border-[#FDBAC5] text-[#F9637B] mr-24 px-24 flex- items-center rounded-full max-w-full break-all line-clamp-1	mt-24" wx:for="{{50}}">
+        请输入搜索关键词请输入搜索关键词请输入搜索关键词请输入搜索关键词
+      </view>
+    </view>
+  </view>
+  <view class="p-main" wx:else>
+    <view class="grid grid-rows-2 grid-cols-3 gap-20 w-full">
+      <view class="pb-14" wx:for="{{50}}">
+        <image src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" mode="scaleToFill" class="w-full h-290 rounded-16 align-bottom" />
+        <view class="text-24 line-clamp-2	pt-16 font-600">
+          Rich Lady‘s Escape MarEscape Marriage
+        </view>
+      </view>
+    </view>
   </view>
 </view>

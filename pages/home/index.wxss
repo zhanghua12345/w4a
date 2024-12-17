@@ -126,7 +126,7 @@
 
 .best-main-image {
   width: 100%;
-  height: 348rpx;
+  height: 400rpx;
   border-radius: 16rpx;
 }
 
@@ -151,13 +151,13 @@
 }
 
 .stars-main-image {
-  height: 290rpx;
+  height: 340rpx;
   border-radius: 16rpx;
   width: 100%;
 }
 
 .praise {
-  margin: 36rpx 0 80rpx;
+  margin: 36rpx 0 0;
   width: 750rpx;
 }
 
@@ -178,7 +178,7 @@
 
 .praise-main-image {
   height: 100%;
-  width: 218rpx;
+  width: 190rpx;
   border-radius: 16rpx;
 }
 

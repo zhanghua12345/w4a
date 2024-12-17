@@ -1,9 +1,11 @@
 // index.js
+const app = getApp();
 const defaultAvatarUrl =
   "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0";
 
 Page({
   data: {
+    userInfo: null,
     list: [
       { name: "历史观看", icon: "icon-fire", url: "" },
       { name: "充值明细", icon: "icon-fire", url: "" },
@@ -11,39 +13,44 @@ Page({
       { name: "赠币记录", icon: "icon-fire", url: "" },
       { name: "联系客服", icon: "icon-fire", url: "" },
     ],
+    showLogin: false,
   },
+  async onLoad() {
+    //判断是否获取到动态设置的globalData
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+      });
+    } else {
+      // 声明回调函数获取app.js onLaunch中接口调用成功后设置的globalData数据
+      app.userInfoCallback = (userInfo) => {
+        if (userInfo != "") {
+          this.setData({
+            userInfo,
+          });
+        }
+      };
+    }
+  },
+
   bindViewTap() {
     wx.navigateTo({
       url: "../logs/logs",
     });
   },
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail;
-    const { nickName } = this.data.userInfo;
+  login() {
     this.setData({
-      "userInfo.avatarUrl": avatarUrl,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+      showLogin: true,
     });
   },
-  onInputChange(e) {
-    const nickName = e.detail.value;
-    const { avatarUrl } = this.data.userInfo;
+  clone() {
     this.setData({
-      "userInfo.nickName": nickName,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
+      showLogin: false,
     });
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: "展示用户信息", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res);
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
-        });
-      },
+  changeInfo(e) {
+    this.setData({
+      userInfo: e.detail.value,
     });
   },
 });

@@ -1,45 +1,85 @@
 // index.js
-
+import { moduleList } from "@/api/home";
 Page({
   data: {
-    active: "",
-    navbarData: {
-      showCapsule: 1, //是否显示左上角图标
-      returnType: 1, //是否显示返回图标 不传不显示
-      homeType: 1, //是否显示主页图标 不传不显示
-      title: "古言网络", //中间标题
-      bgColor: "#f8f8f8",
-    },
-    opacity: 0,
-    showNav: false,
+    top: 2,
+    page: 1,
+    list: null,
+    loadStatus: "loading", // loading loadmore nomore
   },
+
   onLoad() {
-    this.setData({
-      active: "a",
+    this.getList({
+      page: this.data.page,
+      top: this.data.top,
     });
   },
-  //监听屏幕滚动，获取滚动距离
+
+  // 监听屏幕滚动，获取滚动距离
   onPageScroll: function (e) {
-    this.scrollTop = e.scrollTop;
-    let show = false;
-    //根据我们要的滚动距离设置渐隐渐显
-    //滚动小于115时不显示，当大于115小于200时显示并根据距离调节透明度opacity
-    //为了渐隐渐显平滑使用距离进行计算
-    if (e.scrollTop <= 50) {
-      show = false;
-    } else {
-      show = true;
-    }
-    if (show != this.showNav) {
+    // 根据滚动距离设置渐隐渐显
+    if (e.scrollTop <= 115 && this.data.showNav) {
       this.setData({
-        showNav: show,
+        showNav: false,
+      });
+    } else if (e.scrollTop > 115 && !this.data.showNav) {
+      this.setData({
+        showNav: true,
       });
     }
   },
+
+  //监听下拉刷新
+  async onPullDownRefresh() {
+    console.log("监听用户下拉刷新");
+    var _this = this;
+    this.setData({
+      list: [],
+      loadStatus: "loading",
+    });
+    wx.stopPullDownRefresh();
+    this.getList({
+      page: 1,
+      top: _this.data.top,
+    });
+  },
+
+  // 监听上拉加载
+  async onReachBottom() {
+    console.log("监听用户上拉加载");
+    if (this.data.loadStatus !== "nomore") {
+      this.setData({
+        loadStatus: "loading",
+      });
+      this.getList({
+        page: this.data.page,
+        top: this.data.top,
+      });
+    }
+  },
+
+  // 接口调用
+  getList(data) {
+    const _this = this;
+    setTimeout(async () => {
+      const list = await moduleList(data);
+      _this.setData({
+        list: (_this.data.list || []).concat(list.module),
+        page: data.page + 1,
+        loadStatus: list.module?.length < 5 ? "nomore" : "loadmore",
+        top: data.top,
+      });
+    }, 200);
+  },
+
   onChange(event) {
-    wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
-      icon: "none",
+    this.setData({
+      list: [],
+      loadStatus: "loading",
+    });
+    this.getList({
+      page: 1,
+      top: event.detail.name,
     });
   },
 });

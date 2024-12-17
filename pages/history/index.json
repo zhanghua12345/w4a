@@ -7,5 +7,5 @@
     "van-sticky": "@vant/weapp/sticky/index",
     "van-divider": "@vant/weapp/divider/index"
   },
-  "navigationBarTitleText": "排行榜"
+  "navigationBarTitleText": "历史记录"
 }

@@ -15,7 +15,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "古言网络",
     "navigationBarBackgroundColor": "#fff",
-    "backgroundColor": "#f30"
+    "backgroundColor": "#f8f7f8"
   },
   "tabBar": {
     "backgroundColor": "#FFFFFF",
@@ -58,6 +58,7 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index"
   }
 }

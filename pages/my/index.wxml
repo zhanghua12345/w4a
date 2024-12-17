@@ -1,12 +1,14 @@
 <!-- index.wxml -->
 <view class="px-main">
   <view class="flex flex-wrap justify-between items-center pt-main">
-    <image src="/static/nav.png" mode="scaleToFill" class="w-96 h-96 rounded-full" />
+    <image src="{{userInfo.avatarUrl || '/static/nav.png'}}" mode="scaleToFill" class="w-96 h-96 rounded-full" />
     <view class="flex-1 px-32">
-      <view class="text-48">User</view>
-      <view class="text-[#999] text-24 pt-16">ID:10000001</view>
+      <view class="text-48">{{userInfo.nickname != 0 ? userInfo.nickname : '微信用户'}}</view>
+      <view class="text-[#999] text-24 pt-8">ID:{{ userInfo.uid }}</view>
     </view>
-    <van-button plain type="primary" round color="#F9637B">登 录</van-button>
+    <van-button plain type="primary" round color="#F9637B" size="small" bind:tap="login">
+      授权
+    </van-button>
   </view>
   <view class="rounded-32 bg-[#f5f5f5] mt-36 px-40 py-36">
     <view class="flex flex-wrap justify-between items-center border-0 border-b-2 border-dashed border-[#ddd] pb-20 ">
@@ -38,4 +40,4 @@
     </view>
   </view>
 </view>
-<script step></script>
+<Login userInfo="{{userInfo}}" show="{{showLogin}}" bindclone="clone" bind:changeInfo="changeInfo" />
