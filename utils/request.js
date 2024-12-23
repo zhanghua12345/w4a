@@ -16,7 +16,6 @@ export default (params) => {
   // 获取本地token
   const token = wx.getStorageSync("token");
   if (token) {
-    console.log(4454445);
     header["Authorization"] = "Bearer " + token;
     if (params.data) {
       params.data["uid"] = token;
@@ -41,6 +40,7 @@ export default (params) => {
           result.errorCode === "200" ||
           result.code === 200
         ) {
+          console.log(result.data || result.res || result);
           resolve(result.data || result.res || result);
         } else if (result.status === 3) {
           wx.showModal({

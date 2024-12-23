@@ -1,0 +1,75 @@
+<van-popup show="{{ show }}" round position="bottom" bind:close="onClose" custom-style="background:#242430;height:80vh;">
+  <view class="text-fff w-full">
+    <view class="sticky py-main left-0 top-0 w-full bg-[#242430] flex items-center justify-between z-[9999] px-main">
+      <view class="text-32 font-600">创作不易，支持作者</view>
+      <i class="iconfont icon-more px-main rotate-90" bind:tap="onClose" />
+    </view>
+    <view class=" px-main">
+      <view class="flex items-center justify-between pt-10">
+        <view class="font-36 font-600 flex items-center text-32">
+          <view class="h-46 w-46 rounded-full bg-fff mr-10 flex items-center justify-center">
+            <i class="iconfont icon-weixin  text-32 text-[#242430]" />
+          </view>
+          微信支付
+        </view>
+        <view class="font-36">余额: {{ userInfo.egold || 0 }} K币</view>
+      </view>
+      <view class="flex items-center justify-between pt-main">
+        <view class="font-36">本集：{{ sidInfo.price || 200 }} K币（1元=100K币）</view>
+        <view class="font-36 flex items-center" bind:tap="openAgreement">
+          会员服务协议
+          <i class="iconfont icon-gengduo pl-10" style="font-size:20rpx" />
+        </view>
+      </view>
+      <view class="font-36 pt-main">在播剧目总数：{{ userInfo.jsvip }}部</view>
+      <view class="flex items-center justify-between pt-main">
+        <view class="font-36">请选择充值金额</view>
+        <view class="font-36 flex items-center" bind:tap="openPurchaseNotes">
+          购买须知
+          <i class="iconfont icon-gengduo pl-10" style="font-size:20rpx" />
+        </view>
+      </view>
+      <view class="w-full flex flex-wrap justify-between pb-main">
+        <view class="w-330 h-200 rounded-24 bg-[#38364B] flex flex-col justify-center items-center mt-40 relative border-2 border-solid border-fff" wx:for="{{list}}" bind:tap="pay" data-item="{{item}}">
+          <view class="absolute top-[-20rpx] left-[-2rpx] bg-gradient-to-t from-[#F4CFC6] to-[#DBAD89] rounded-tl-24 rounded-br-24 px-20 h-40 leading-40 text-26 text-[#23272D]">
+            {{item.poster}}
+          </view>
+          <block wx:if="{{index%2===0}}">
+            <view class="text-[#DFA788] text-40 font-600">
+              {{item.price}}
+              <span class="text-24">元</span>
+            </view>
+            <view>{{item.egold}} {{!item.giveegold ? '' : "+ " + item.giveegold}} K币</view>
+            <view class="text-[#DFA788]">{{item.title}}</view>
+          </block>
+          <block wx:else>
+            <view class="text-[#DFA788] text-40 font-600">
+              {{item.price}}
+              <span class="text-24">元</span>
+            </view>
+            <view>{{item.title}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</van-popup>
+<van-popup show="{{ showCenter }}" bind:close="onClose" custom-style="background:rgba(0,0,0,0)">
+  <view class="relative w-650" bind:tap="pay" data-item="{{backInfo}}">
+    <image class="w-full " mode="widthFix" src="/static/images/paybj.png" />
+    <view class="absolute left-0 top-160 w-full leading-1 tracking-normal">
+      <view class=" flex justify-center items-center">
+        <view class="text-40 text-[#1a1a1a]">充</view>
+        <view class="text-64 text-[#ff6d35] font-600 px-14">{{ backInfo.price || 0 }}</view>
+        <view class="text-40 text-[#1a1a1a]">送</view>
+        <view class="text-64 text-[#ff6d35] font-600 px-14">{{ backInfo.zbegold || 0 }}</view>
+        <view class="text-40 text-[#1a1a1a]">元</view>
+      </view>
+      <view class=" flex justify-center items-center mt-main">
+        <view class="text-32 text-[#1a1a1a]">共</view>
+        <view class="text-48 text-[#ff6d35] font-600 px-14">{{ backInfo.egold || 0 }}</view>
+        <view class="text-35 text-[#1a1a1a]">K币</view>
+      </view>
+    </view>
+  </view>
+</van-popup>

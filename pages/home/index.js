@@ -1,7 +1,7 @@
 // index.js
 const app = getApp();
 import { pageList, moduleList } from "@/api/home";
-
+import { PlayerManager } from "@/utils/playerManager";
 Page({
   data: {
     navbarData: {
@@ -135,5 +135,20 @@ Page({
     this.setData({
       showHistory: false,
     });
+  },
+
+  // 打开视频
+  openVideo(event) {
+    const data = event.currentTarget.dataset.item;
+    if (data.wx_drama_id) {
+      PlayerManager.navigateToPlayer({
+        srcAppid: "wx2ab73633e3b9fcbf",
+        dramaId: data.wx_drama_id,
+      });
+    } else {
+      uni.navigateTo({
+        url: `/pages/video/index?sid=${data.bookid || data.id}`,
+      });
+    }
   },
 });

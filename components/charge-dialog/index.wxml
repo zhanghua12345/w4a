@@ -1,0 +1,51 @@
+<!-- components/loadmore/index.wxml -->
+<view class="charge-dialog-desc">
+  <view class="h-[1100rpx] w-full bg-fff rounded-t-24 relative overflow-hidden">
+    <view class="absolute left-0 top-0 flex justify-between items-center py-30 bg-fff w-full">
+      <view class="h-46 w-46 rounded-full mr-10 flex items-center justify-center bg-[#23c36d] ml-main">
+        <i class="iconfont icon-weixin text-fff text-32" />
+      </view>
+      <view class="flex-1 font-600 text-32">微信支付</view>
+      <i class="iconfont icon-a-Frame5029  text-40 px-main" bind:tap="closeOpenAreaLeft" />
+    </view>
+    <view class="border-0 border-b-2 border-solid border-[#ddd] w-full pb-20">
+      <view class="pt-100 pl-main">我的K币：{{ egold || 0 }}</view>
+      <view class="px-main flex justify-between items-center pt-20">
+        <view class="">解锁{{newExtParam.price?'本集':'单集'}}消耗： {{ newExtParam.price || 200 }} K币</view>
+        <view>在播剧目总数：{{ userInfo.jsvip || 0 }} 部</view>
+      </view>
+    </view>
+    <view class="pt-main w-full">
+      <view class="flex justify-between items-center px-main">
+        <view class="text-28 flex-1">
+          充值
+          <span class="text-24">（1元=100K币）</span>
+        </view>
+        <view class="text-main underline" bind:tap="openAgreement">会员服务协议</view>
+        <view class="text-main underline ml-20" bind:tap="openPurchaseNotes">付费须知</view>
+      </view>
+      <view class=" flex flex-wrap justify-between pb-main px-main text-fff">
+        <view class="w-330 h-200 rounded-24 bg-[#38364B] flex flex-col justify-center items-center mt-40 relative border-2 border-solid border-fff" wx:for="{{list}}" bind:tap="pay" wx:key="{{index}}" data-item="{{item}}">
+          <view class="absolute top-[-20rpx] left-[-2rpx] bg-gradient-to-t from-[#F4CFC6] to-[#DBAD89] rounded-tl-24 rounded-br-24 px-20 h-40 leading-40 text-26 text-[#23272D]">
+            {{item.poster}}
+          </view>
+          <block wx:if="{{index%2===0}}">
+            <view class="text-[#DFA788] text-40 font-600">
+              {{item.price}}
+              <span class="text-24">元</span>
+            </view>
+            <view>{{item.egold}} {{!item.giveegold ? '' : "+ " + item.giveegold}} K币</view>
+            <view class="text-[#DFA788]">{{item.title}}</view>
+          </block>
+          <block wx:else>
+            <view class="text-[#DFA788] text-40 font-600">
+              {{item.price||0}}
+              <span class="text-24">元</span>
+            </view>
+            <view>{{item.title||0}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

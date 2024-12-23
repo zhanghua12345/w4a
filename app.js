@@ -1,6 +1,8 @@
 // app.js
 
 import { login, getUser } from "@/api/login";
+import { PlayerManager } from "@/utils/playerManager";
+const playletPlugin = requirePlugin("playlet-plugin");
 App({
   onLaunch() {
     // 获取系统信息
@@ -9,6 +11,12 @@ App({
     this.getNew();
     // 获取code、用户信息
     this.getLogin();
+    playletPlugin.onPageLoad(this._onPlayerLoad.bind(this));
+  },
+  _onPlayerLoad(info) {
+    // 初始化一个PlayerManager，封装了插件的接口
+    const playerManager = new PlayerManager();
+    playerManager._onPlayerLoad(info);
   },
   getAppSystem() {
     //小程序该菜单按钮的布局位置信息
@@ -92,5 +100,6 @@ App({
     userInfo: null,
     capsuleObj: null,
     titleHeight: null,
+    isPayActive: true,
   },
 });

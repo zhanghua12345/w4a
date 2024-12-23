@@ -1,0 +1,5 @@
+<view class="px-main text-24 flex flex-col items-center justify-center h-screen">
+  <image src="{{kfImg}}" show-menu-by-longpress class="w-450" mode="widthFix" />
+  <view class="mt-40 text-48">长按识别二维码</view>
+  <view class="mt-40 text-48">添加客服</view>
+</view>

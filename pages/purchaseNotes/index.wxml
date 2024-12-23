@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item title="购买须知1" name="1" border="{{false}}" size="large">
+    1、k币和会员属于虚拟产品，一经购买不可退换
+  </van-collapse-item>
+  <van-collapse-item title="购买须知2" name="2" border="{{false}}" size="large">
+    2、未满18岁的未成年人需要在监护人主导、同意下进行相关付费操作。
+  </van-collapse-item>
+  <van-collapse-item title="购买须知3" name="3" border="{{false}}" size="large">
+    3、购买时获得的赠币仅24小时内有效。
+  </van-collapse-item>
+  <van-collapse-item title="购买须知4" name="4" border="{{false}}" size="large">
+    4、充值K币一般在10分钟内到账，如未到账请在“我的”页面联系客服
+  </van-collapse-item>
+</van-collapse>

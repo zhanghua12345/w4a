@@ -9,7 +9,12 @@
     "pages/search/index",
     "pages/history/index",
     "pages/collections/index",
-    "pages/logs/logs"
+    "pages/recharge/index",
+    "pages/giftCoins/index",
+    "pages/consumption/index",
+    "pages/kefu/index",
+    "pages/agreement/index",
+    "pages/purchaseNotes/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -56,9 +61,23 @@
   "debug": true,
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "van-toast": "@vant/weapp/toast/index"
+    "van-toast": "@vant/weapp/toast/index",
+    "charge-dialog": "/components/charge-dialog/index",
+    "open-area-left": "/components/open-area-left/index"
+  },
+
+  "plugins": {
+    "playlet-plugin": {
+      "version": "latest",
+      "provider": "wx94a6522b1d640c3b",
+      "genericsImplementation": {
+        "playlet": {
+          "charge-dialog": "/components/charge-dialog/index",
+          "open-area-left": "/components/open-area-left/index"
+        }
+      }
+    }
   }
 }

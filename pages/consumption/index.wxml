@@ -1,0 +1,15 @@
+<view class="px-main text-24 flex flex-col items-center">
+  <view class="pb-20 w-full">
+    <view class="py-main border-0 border-b-2 last:border-b-0 border-solid border-[#eee]" wx:for="{{list}}">
+      <view class="flex flex-wrap items-center justify-between">
+        <view class=" font-600">{{ item.name || '-' }}</view>
+        <view class="text-24 text-[#999]">{{ item.create_time }}</view>
+      </view>
+      <view class="flex flex-wrap justify-between pt-16 text-24">
+        <view class="text-[#8B8B8B]">第 {{ item.order }} 集：{{ item.title }}</view>
+        <view class="text-main">{{ item.price }} K币</view>
+      </view>
+    </view>
+  </view>
+  <loadmore status="{{loadStatus}}" />
+</view>

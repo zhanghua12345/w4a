@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "loadmore": "../../components/loadmore"
+  },
+  "navigationBarTitleText": "充值明细",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

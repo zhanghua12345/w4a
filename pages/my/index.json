@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "Login": "../../components/login"
+    "Login": "../../components/login",
+    "PayWx": "../../components/payWx"
   },
   "navigationBarTitleText": ""
 }

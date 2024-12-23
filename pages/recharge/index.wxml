@@ -1,0 +1,17 @@
+<view class="px-main text-24 flex flex-col items-center">
+  <view class="pb-20 w-full">
+    <view class="py-main border-0 border-b-2 last:border-b-0 border-solid border-[#eee]" wx:for="{{list}}">
+      <view class="flex flex-wrap items-center justify-between">
+        <view class=" font-600">充值：{{ item.money || '-' }} 元</view>
+        <view class="text-24 {{item.status===1?'text-main':'text-[#999]'}}">
+          {{map[item.status] || '订单异常' }}
+        </view>
+      </view>
+      <view class="flex flex-wrap justify-between pt-16 text-24">
+        <view class="text-[#8B8B8B]">订单号：{{ item.out_trade_no }}</view>
+        <!-- <view class="text-main">订单号</view> -->
+      </view>
+    </view>
+  </view>
+  <loadmore status="{{loadStatus}}" />
+</view>

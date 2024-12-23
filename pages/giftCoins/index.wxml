@@ -1,0 +1,27 @@
+<view class="px-main text-24 flex flex-col items-center">
+  <view class="pb-20 w-full">
+    <view class=" py-main border-0 border-b-2 last:border-b-0 border-solid border-[#eee]" wx:for="{{list}}">
+      <view class="flex flex-wrap items-center justify-between">
+        <view>
+          <view class="text-24 text-[#999]">{{ item.addtime || ''}}</view>
+          <view class="font-600 pt-10">签到/购买赠送-没数据</view>
+        </view>
+        <view class=" font-600 {{item.text === '已过期' ? 'text-[#1A1A1A]' : 'text-main'}}">
+          +{{ item.egold  || 0}}
+        </view>
+      </view>
+      <view class="flex flex-wrap justify-between pt-16 text-24">
+        <view class="flex flex-wrap items-center text-main">
+          <i class="iconfont icon-shijian pr-8 text-24" />
+          {{item.text}}
+        </view>
+        <view class="text-[#8B8B8B]">余额：{{ item.over || 0 }}</view>
+      </view>
+      <!-- <view class="flex-1 pl-main">
+        <view class="line-clamp-2 font-600">{{item.name}}</view>
+        <view class="line-clamp-1 text-400 mt-20">第 {{item.latest}} 集/{{item.latestid}} 集</view>
+      </view> -->
+    </view>
+  </view>
+  <loadmore status="{{loadStatus}}" />
+</view>

@@ -28,7 +28,16 @@ export const discoverList = (params) => {
   });
 };
 
-// 删除我的收藏
+// 添加收藏
+export const addDiscover = (params) => {
+  return request({
+    url: "/addkeep",
+    method: "POST",
+    data: params || {},
+  });
+};
+
+// 删除收藏
 export const deleteDiscover = (params) => {
   return request({
     url: "/chasingdramadel",

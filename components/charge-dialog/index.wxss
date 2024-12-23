@@ -1,0 +1,35 @@
+/* components/recentlyPlayed/index.wxss */
+@import "../../static/iconfont.wxss";
+.screen-dialog--charge-dialog.screen-dialog--weui-half-screen-dialog {
+  padding-bottom: 0 !important; /* 强制去除底部安全距离 */
+}
+.weui-half-screen-dialog.charge-dialog {
+  background: transparent !important;
+  height: 100vh;
+  max-height: none !important;
+}
+
+.charge-dialog .charge-dialog-desc {
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
+  max-height: none !important;
+}
+
+.charge-dialog .charge-dialog-desc > scroll-view {
+  height: 100vh;
+  max-height: none !important;
+  overflow-y: hidden;
+}
+
+.weui-navigation-bar__body {
+  align-items: flex-start !important;
+}
+
+.weui-navigation-bar__left {
+  margin-top: -20rpx;
+}
+
+.charge-dialog-desc {
+  height: 100vh;
+}

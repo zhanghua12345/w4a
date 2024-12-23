@@ -12,32 +12,37 @@
   </view>
   <view class="rounded-32 bg-[#f5f5f5] mt-36 px-40 py-36">
     <view class="flex flex-wrap justify-between items-center border-0 border-b-2 border-dashed border-[#ddd] pb-20 ">
-      <view class="font-600">My Wallet</view>
-      <van-button plain type="primary" round color="#F9637B" size="small">立即充值</van-button>
+      <view class="font-600">我的余额</view>
     </view>
-    <view class="flex flex-wrap justify-between items-center pt-20 ">
-      <view class="flex flex-wrap items-center">
-        <image src="/static/nav.png" mode="scaleToFill" class="w-48 h-48 rounded-full" />
-        <view class="px-22">
-          <view class="text-20 text-[#EBB0CB] font-600">User</view>
-          <view class="">coin: 50</view>
+    <view class="flex flex-wrap justify-between items-center pt-28 pb-16">
+      <view class="flex">
+        <view class="flex flex-wrap items-center">
+          <image src="/static/images/gift.png" mode="widthFix" class="w-48 rounded-full" />
+          <view class="pl-16">
+            <view class="text-20 text-[#EBB0CB] font-600">我的K币</view>
+            <view class="text-48 font-600 leading-1.3">{{userInfo.egold || 0}}</view>
+          </view>
+        </view>
+        <view class="flex flex-wrap items-center pl-48">
+          <image src="/static/images/diamond.png" mode="widthFix" class="w-48 rounded-full" />
+          <view class="pl-16">
+            <view class="text-20 text-[#EBB0CB]">会员天数</view>
+            <view class="text-48 font-600 leading-1.3">{{userInfo.vip_enddate || 0}}</view>
+          </view>
         </view>
       </view>
-      <view class="flex flex-wrap items-center">
-        <view class="px-22 text-right">
-          <view class="text-20 text-[#EBB0CB]">User</view>
-          <view class="">ID:10000001</view>
-        </view>
-        <image src="/static/nav.png" mode="scaleToFill" class="w-48 h-48 rounded-full" />
-      </view>
+      <van-button type="primary" round color="linear-gradient(to right, #F76D67, #FB5196)" size="small" bind:tap="openPay">
+        充值
+      </van-button>
     </view>
   </view>
   <view class="rounded-32 bg-[#f5f5f5] mt-36 px-40 ">
-    <view class="flex flex-wrap justify-between items-center  border-0 border-b-2 last:border-b-0 border-solid border-[#dfdfdf] py-28" wx:for="{{list}}" wx:for-item="item">
+    <view class="flex flex-wrap justify-between items-center  border-0 border-b-2 last:border-b-0 border-solid border-[#dfdfdf] py-28" wx:for="{{list}}" bind:tap="openDetail" data-item="{{item}}">
       <i class="iconfont text-40 {{item.icon}}" />
       <view class="flex-1 px-main font-600">{{item.name}}</view>
       <i class="iconfont icon-more text-20" />
     </view>
   </view>
 </view>
-<Login userInfo="{{userInfo}}" show="{{showLogin}}" bindclone="clone" bind:changeInfo="changeInfo" />
+<Login userInfo="{{userInfo}}" show="{{showLogin}}" bindclone="clone" bind:changeInfo="changeInfo" bind:clone="clone" />
+<PayWx show="{{showPay}}" bindclone="clone" />

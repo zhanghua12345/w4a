@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "loadmore": "../../components/loadmore"
+  },
+  "navigationBarTitleText": "赠币记录",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

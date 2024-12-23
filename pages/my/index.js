@@ -7,13 +7,14 @@ Page({
   data: {
     userInfo: null,
     list: [
-      { name: "历史观看", icon: "icon-fire", url: "" },
-      { name: "充值明细", icon: "icon-fire", url: "" },
-      { name: "消费记录", icon: "icon-fire", url: "" },
-      { name: "赠币记录", icon: "icon-fire", url: "" },
-      { name: "联系客服", icon: "icon-fire", url: "" },
+      { name: "历史观看", icon: "icon-fire", url: "../history/index" },
+      { name: "充值明细", icon: "icon-fire", url: "../recharge/index" },
+      { name: "消费记录", icon: "icon-fire", url: "../consumption/index" },
+      { name: "赠币记录", icon: "icon-fire", url: "../giftCoins/index" },
+      { name: "联系客服", icon: "icon-fire", url: "../kefu/index" },
     ],
     showLogin: false,
+    showPay: false,
   },
   async onLoad() {
     //判断是否获取到动态设置的globalData
@@ -43,14 +44,28 @@ Page({
       showLogin: true,
     });
   },
+  openPay() {
+    console;
+    this.setData({
+      showPay: true,
+    });
+  },
   clone() {
     this.setData({
       showLogin: false,
+      showPay: false,
     });
   },
   changeInfo(e) {
     this.setData({
       userInfo: e.detail.value,
+    });
+  },
+  openDetail(event) {
+    const url = event.currentTarget.dataset.item.url;
+    console.log(url);
+    wx.navigateTo({
+      url,
     });
   },
 });

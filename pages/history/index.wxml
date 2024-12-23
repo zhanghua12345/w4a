@@ -1,14 +1,13 @@
-<view class="px-main text-24">
-  <view class="flex flex-wrap items-center py-16 border-0 border-b-2 border-solid border-[#eee] last:border-b-0" wx:for="{{4}}">
-    <image class="w-48 h-48" src="/static/images/articleHistory.png" alt="" />
-    <image class="h-158 ml-main max-w-200 rounded-16" src="https://pic.rmb.bdstatic.com/bjh/news/dfc8c7b3aab3160325143a1336a215a4.jpeg" alt="" mode="heightFix" />
-    <view class="flex-1 pl-main">
-      <view class="line-clamp-2 font-600">
-        After A Breakup,the Ex-girlfriend Makes A Stunning Return
+<view class="px-main text-24 flex flex-col items-center">
+  <view class="pb-20 w-full">
+    <view class="flex flex-wrap items-center py-16 border-0 border-b-2 last:border-b-0 border-solid border-[#eee] " wx:for="{{list}}">
+      <image class="w-48 h-48 py-30 pr-main" src="/static/images/{{item.bookcase?'articleHistory-active':'articleHistory'}}.png" alt="" bind:tap="discoverClick" data-item="{{item}}" data-index="{{index}}" />
+      <image class="h-158  max-w-200 rounded-16" src="{{item.cover}}" alt="" mode="heightFix" />
+      <view class="flex-1 pl-main">
+        <view class="line-clamp-2 font-600">{{item.name}}</view>
+        <view class="line-clamp-1 text-400 mt-20">第 {{item.latest}} 集/{{item.latestid}} 集</view>
       </view>
-      <view class="line-clamp-1 text-400 mt-20">EP.1/EP.1</view>
     </view>
   </view>
-  <view></view>
-  <loadmore status="loading" loading-text="加载中" />
+  <loadmore status="{{loadStatus}}" />
 </view>

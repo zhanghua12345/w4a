@@ -9,7 +9,6 @@ Component({
       //   由父页面传递的数据，变量名字自命名
       type: Boolean,
     },
-
     userInfo: {
       type: Object,
       observer: function (newVal, oldVal) {

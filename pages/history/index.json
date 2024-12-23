@@ -7,5 +7,7 @@
     "van-sticky": "@vant/weapp/sticky/index",
     "van-divider": "@vant/weapp/divider/index"
   },
-  "navigationBarTitleText": "历史记录"
+  "navigationBarTitleText": "历史记录",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

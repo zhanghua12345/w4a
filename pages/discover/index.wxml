@@ -10,9 +10,9 @@
       </view>
       <view class="w-full">
         <view class="text-24 line-clamp-2	pt-16 font-600">{{item.name}}</view>
-        <view class="text-24 font-600	py-10">
-          EP.1
-          <span class="font-400">/EP.51</span>
+        <view class="text-22 py-10 text-[#888]">
+          第 {{item.history}} 集
+          <span class="font-400">/{{item.count}} 集</span>
         </view>
       </view>
     </view>

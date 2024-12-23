@@ -26,7 +26,7 @@
     </view>
     <scroll-view type="list" scroll-x class="contain flex items-start">
       <block wx:for="{{bestList}}" wx:key="*this">
-        <view class="best-main">
+        <view class="best-main" bind:tap="openVideo" data-item="{{item}}">
           <image src="{{item.cover}}" mode="scaleToFill" class="best-main-image" />
           <view class="list-title truncate text-ellipsis	">{{item.name}}</view>
         </view>
